@@ -1,0 +1,23 @@
+{
+  "name": "tachyon",
+  "version": "1.0.0",
+  "description": "A modular, open-source Discord bot.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Tests coming soon.\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/initializesahib/tachyon.git"
+  },
+  "keywords": [
+    "bot",
+    "discord"
+  ],
+  "author": "Sahibdeep Nann <initializesahib@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/initializesahib/tachyon/issues"
+  },
+  "homepage": "https://github.com/initializesahib/tachyon#readme"
+}
