@@ -34,12 +34,18 @@ describe('Tachyon', () => {
     })
     it('should produce normal output outside of testing mode', () => {
       const output = stdout.inspectSync(() => {
-        tachyon.initializeTachyon()
+        tachyon.initializeTachyon(false)
       })
       assert(equals(output, ['Starting Tachyon 1.0.0\n',
         'Hello, world!\n',
         'Loaded module hello\n',
         'Tachyon is up and running\n']))
+    })
+    it('should output an error when it occurs in normal mode', () => {
+      const output = stderr.inspectSync(() => {
+        tachyon.initializeTachyon(true)
+      })
+      assert.equal(output, 'Mock error!\n')
     })
   })
 })

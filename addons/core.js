@@ -37,10 +37,12 @@ function testTachyon(causeError) {
 
 /**
  * Runs Tachyon in normal mode.
+ * @param {boolean} causeError - If an error should be thrown or not.
  * @returns {number} - 0 if successful, 1 if failed.
  */
-function initializeTachyon() {
+function initializeTachyon(causeError) {
   try {
+    if (causeError) throw 'Mock error!'
     console.log('Starting Tachyon 1.0.0')
     const modules = require('../modules.json') // Loads the bot configuration.
     for (let moduleEntry of modules) {
