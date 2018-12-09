@@ -26,7 +26,7 @@ function testTachyon(causeError) {
     if (causeError) throw 'Mock error!'
     const modules = require('../modules.json')
     for (let moduleEntry of modules) {
-      require(`../modules/${moduleEntry.name}.js`)()
+      require(`../modules/${moduleEntry}.js`)()
     }
     return 0
   } catch (e) {
@@ -45,9 +45,8 @@ function initializeTachyon() {
     const modules = require('../modules.json') // Loads the bot configuration.
     for (let moduleEntry of modules) {
       // Loads the module.
-      const mod = require(`../modules/${moduleEntry.name}.js`)
-      mod()
-      console.log(`Loaded module ${moduleEntry.name}`)
+      require(`../modules/${moduleEntry}.js`)()
+      console.log(`Loaded module ${moduleEntry}`)
     }
     console.log('Tachyon is up and running')
     return 0
