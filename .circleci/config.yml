@@ -41,4 +41,9 @@ jobs:
       # code coverage!
       - run: npx nyc --reporter=lcov --reporter=text-lcov npm test
       - run: npx codecov
-      
+ 
+      # build and artifact
+      - run: npm build
+      - store_artifacts:
+        path: ~/repo/dist
+     
