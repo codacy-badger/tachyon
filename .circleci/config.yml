@@ -27,7 +27,7 @@ jobs:
           - v1-dependencies-
 
       - run: npm install --dev
-      - run: npm install -g codecov
+      - run: npm install codecov
  
       - save_cache:
           paths:
@@ -39,6 +39,6 @@ jobs:
       # run tests!
       - run: npm test
       # code coverage!
-      - run: istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
-      - run: codecov
+      - run: npx istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
+      - run: npx codecov
       
