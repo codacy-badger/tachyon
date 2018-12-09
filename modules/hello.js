@@ -12,4 +12,9 @@
  * limitations under the License.
  */
 
-module.exports = () => console.log('Hello, world!') // Outputs Hello, world!
+/** Outputs 'Hello, world!' to stdout. */
+function sayHello() {
+  console.log('Hello, world!') // Outputs Hello, world!
+}
+
+module.exports = sayHello

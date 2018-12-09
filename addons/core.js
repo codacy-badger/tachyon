@@ -16,8 +16,13 @@
  * Deleted it will make the bot crash on startup.
  * Unless syou plan to replace it or change the code, don't delete it. */
 
-// Testing mode removes output and returns 0 or 1 instead of exiting.
-module.exports = (testingMode, createError) => {
+/**
+ * Initializes Tachyon.
+ * @param {boolean} testingMode - If testing mode is on or not.
+ * @param {boolean} createError - If an error should be thrown or not.
+ * @returns {number} - 0 if successful, 1 if failed.
+ */
+function initializeTachyon(testingMode, createError) {
   try {
     if (createError) {
       throw 'Mock error!' // Used in testing mode.
@@ -46,7 +51,9 @@ module.exports = (testingMode, createError) => {
     return 0
   } catch (e) {
     console.error(e)
-    
+
     return 1
   }
 }
+
+module.exports = initializeTachyon
