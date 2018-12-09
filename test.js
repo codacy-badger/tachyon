@@ -21,20 +21,20 @@ const equals = require('array-equal') // Needed to compare arrays.
 describe('Tachyon', () => {
   describe('addons/core', () => {
     it('should run successfully', () => {
-      assert.equal(tachyon(true, false), 0)
+      assert.equal(tachyon.testTachyon(false), 0)
     })
     it('should fail when an error occurs', () => {
-      assert.equal(tachyon(true, true), 1)
+      assert.equal(tachyon.testTachyon(true), 1)
     })
     it('should output an error when it occurs', () => {
       const output = stderr.inspectSync(() => {
-        tachyon(true, true)
+        tachyon.testTachyon(true)
       })
       assert.equal(output, 'Mock error!\n')
     })
     it('should produce normal output outside of testing mode', () => {
       const output = stdout.inspectSync(() => {
-        tachyon(false, false)
+        tachyon.initializeTachyon()
       })
       assert(equals(output, ['Starting Tachyon 1.0.0\n',
         'Hello, world!\n',

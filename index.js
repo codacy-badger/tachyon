@@ -12,6 +12,10 @@
  * limitations under the License.
  */
 
-const tachyon = require('./addons/core') // Loads the core.
+const init = require('./addons/core') // Loads the core.
 
-tachyon(false, false) // Run Tachyon in normal mode, instead of testing mode.
+// Starts the core.
+module.exports = (req, res) => {
+  const code =  init.initializeTachyon(false, false)
+  res.end(`initializeTachyon() completed with status code ${code}`)
+}

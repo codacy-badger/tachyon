@@ -17,43 +17,47 @@
  * Unless syou plan to replace it or change the code, don't delete it. */
 
 /**
- * Initializes Tachyon.
- * @param {boolean} testingMode - If testing mode is on or not.
- * @param {boolean} createError - If an error should be thrown or not.
- * @returns {number} - 0 if successful, 1 if failed.
- */
-function initializeTachyon(testingMode, createError) {
+  * Runs Tachyon in testing mode.
+  * @param {boolean} causeError - If an error should be thrown or not.
+  * @returns {number} - 0 if successful, 1 if failed.
+  */
+function testTachyon(causeError) {
   try {
-    if (createError) {
-      throw 'Mock error!' // Used in testing mode.
+    if (causeError) throw 'Mock error!'
+    const modules = require('../modules.json')
+    for (let moduleEntry of modules) {
+      require(`../modules/${moduleEntry.name}.js`)()
     }
-
-    if (!testingMode) {
-      console.log('Starting Tachyon 1.0.0')
-    }
-
-    const config = require('../config.json') // Loads the bot configuration.
-
-    for (let moduleEntry of config.modules) {
-      // Loads the module.
-      const mod = require(`../modules/${moduleEntry.name}.js`)
-      mod()
-      if (!testingMode) {
-        console.log(`Loaded module ${moduleEntry.name}`)
-      }
-      // TODO: Register the module with the Discord bot.
-    }
-
-    if (!testingMode) {
-      console.log('Tachyon is up and running')
-    }
-
     return 0
   } catch (e) {
     console.error(e)
-
     return 1
   }
 }
 
-module.exports = initializeTachyon
+/**
+ * Runs Tachyon in normal mode.
+ * @returns {number} - 0 if successful, 1 if failed.
+ */
+function initializeTachyon() {
+  try {
+    console.log('Starting Tachyon 1.0.0')
+    const modules = require('../modules.json') // Loads the bot configuration.
+    for (let moduleEntry of modules) {
+      // Loads the module.
+      const mod = require(`../modules/${moduleEntry.name}.js`)
+      mod()
+      console.log(`Loaded module ${moduleEntry.name}`)
+    }
+    console.log('Tachyon is up and running')
+    return 0
+  } catch (e) {
+    console.error(e)
+    return 1
+  }
+}
+
+module.exports = {
+  initializeTachyon,
+  testTachyon
+}
