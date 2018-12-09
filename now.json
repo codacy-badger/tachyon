@@ -3,7 +3,7 @@
   "builds": [
     { "src": "addons/*.js", "use": "@now/node" },
     { "src": "modules/*.js", "use": "@now/node" },
-    { "src": "index.js", "use": "@now/node" },
+    { "src": "index_now.js", "use": "@now/node" },
     { "src": "modules.json", "use": "@now/static" }
   ]
 }

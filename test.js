@@ -26,11 +26,12 @@ describe('Tachyon', () => {
     it('should fail when an error occurs', () => {
       assert.equal(tachyon.testTachyon(true), 1)
     })
-    it('should output an error when it occurs', () => {
+    it('should output errors in both modes', () => {
       const output = stderr.inspectSync(() => {
         tachyon.testTachyon(true)
+        tachyon.initializeTachyon(true)
       })
-      assert.equal(output, 'Mock error!\n')
+      assert.equal(output, 'Mock error!\nMock error!\n')
     })
     it('should produce normal output outside of testing mode', () => {
       const output = stdout.inspectSync(() => {
@@ -40,12 +41,6 @@ describe('Tachyon', () => {
         'Hello, world!\n',
         'Loaded module hello\n',
         'Tachyon is up and running\n']))
-    })
-    it('should output an error when it occurs in normal mode', () => {
-      const output = stderr.inspectSync(() => {
-        tachyon.initializeTachyon(true)
-      })
-      assert.equal(output, 'Mock error!\n')
     })
   })
 })

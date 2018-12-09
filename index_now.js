@@ -15,4 +15,7 @@
 const init = require('./addons/core') // Loads the core.
 
 // Starts the core.
-init.initializeTachyon(false, false)
+module.exports = (req, res) => {
+  const code =  init.initializeTachyon(false, false)
+  res.end(`initializeTachyon() completed with status code ${code}`)
+}
