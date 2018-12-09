@@ -37,8 +37,8 @@ describe('Tachyon', () => {
         tachyon(false, false)
       })
       assert(equals(output, ['Starting Tachyon 1.0.0\n',
-        'Loaded module hello\n',
         'Hello, world!\n',
+        'Loaded module hello\n',
         'Tachyon is up and running\n']))
     })
   })
