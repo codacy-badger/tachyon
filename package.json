@@ -4,8 +4,8 @@
   "description": "A modular, open-source Discord bot.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Tests coming soon.\" && exit 0",
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "npx mocha"
   },
   "repository": {
     "type": "git",
@@ -15,16 +15,17 @@
     "bot",
     "discord"
   ],
-  "author": "Sahibdeep Nann <initializesahib@gmail.com>",
+  "author": "Sahibdeep Nann",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/initializesahib/tachyon/issues"
   },
   "homepage": "https://github.com/initializesahib/tachyon#readme",
-  "dependencies": {
-    "winston": "^3.1.0"
-  },
   "devDependencies": {
-    "eslint": "^5.10.0"
+    "array-equal": "^1.0.0",
+    "eslint": "^5.10.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0",
+    "test-console": "^1.1.0"
   }
 }
