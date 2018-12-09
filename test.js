@@ -31,7 +31,7 @@ describe('Tachyon', () => {
         tachyon.testTachyon(true)
         tachyon.initializeTachyon(true)
       })
-      assert.equal(output, 'Mock error!\nMock error!\n')
+      assert(equals(output, ['Mock error!\n', 'Mock error!\n']))
     })
     it('should produce normal output outside of testing mode', () => {
       const output = stdout.inspectSync(() => {
