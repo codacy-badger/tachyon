@@ -23,12 +23,6 @@ describe('Tachyon', () => {
     it('should run successfully', () => {
       assert.equal(tachyon(true, false), 0)
     })
-    it('should be able to load a module', () => {
-      const output = stdout.inspectSync(() => {
-        tachyon(true, false)
-      })
-      assert.equal(output, 'Hello, world!\n')
-    })
     it('should fail when an error occurs', () => {
       assert.equal(tachyon(true, true), 1)
     })

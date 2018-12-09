@@ -19,23 +19,34 @@
 // Testing mode removes output and returns 0 or 1 instead of exiting.
 module.exports = (testingMode, createError) => {
   try {
-    if (createError) throw 'Mock error!' // Used in testing mode.
-    if (!testingMode) console.log('Starting Tachyon 1.0.0')
+    if (createError) {
+      throw 'Mock error!' // Used in testing mode.
+    }
+
+    if (!testingMode) {
+      console.log('Starting Tachyon 1.0.0')
+    }
 
     const config = require('../config.json') // Loads the bot configuration.
 
     for (let moduleEntry of config.modules) {
       // Loads the module.
       const mod = require(`../modules/${moduleEntry.name}.js`)
-      if (!testingMode) console.log(`Loaded module ${moduleEntry.name}`)
       mod()
+      if (!testingMode) {
+        console.log(`Loaded module ${moduleEntry.name}`)
+      }
       // TODO: Register the module with the Discord bot.
     }
 
-    if (!testingMode) console.log('Tachyon is up and running')
+    if (!testingMode) {
+      console.log('Tachyon is up and running')
+    }
+
     return 0
   } catch (e) {
     console.error(e)
+    
     return 1
   }
 }
