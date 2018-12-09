@@ -25,7 +25,7 @@ let logger = null
 let interpreter = null
 let loader = null
 
-for (component of manifest.components) {
+for (let component of manifest.components) {
   if (component.load) {
     if (logger) {
       logger.info(`Loading component ${component.name} v${component.version}`)
@@ -33,11 +33,11 @@ for (component of manifest.components) {
       console.log(`Loading component ${component.name} v${component.version}`)
     }
     const mod = require(`./components/${component.name}.js`)
-    if (component.designation === "interpreter") {
+    if (component.designation === 'interpreter') {
       interpreter = mod
-    } else if (component.designation === "logger") {
+    } else if (component.designation === 'logger') {
       logger = mod(manifest)
-    } else if (component.designation === "loader") {
+    } else if (component.designation === 'loader') {
       loader = mod
     }
   }
@@ -52,7 +52,7 @@ if (interpreter === null || logger === null || loader === null) {
   process.exit(1)
 }
 
-for (mod of manifest.modules) {
+for (let mod of manifest.modules) {
   if (mod.load) {
     logger.info(`Loading module ${mod.name} v${mod.version}`)
     if (mod.type === 'action') {

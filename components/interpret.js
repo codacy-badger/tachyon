@@ -16,7 +16,7 @@
 
 module.exports = {
   run: (logger, mod) => mod.do(logger),
-  nop: (_logger, _mod) => {
+  nop: () => {
     return
   }
 }

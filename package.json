@@ -23,5 +23,8 @@
   "homepage": "https://github.com/initializesahib/tachyon#readme",
   "dependencies": {
     "winston": "^3.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.10.0"
   }
 }
