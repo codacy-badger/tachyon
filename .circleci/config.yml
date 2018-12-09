@@ -43,7 +43,7 @@ jobs:
       - run: npx codecov
  
       # build and artifact
-      - run: npm build
+      - run: npm run-script build
 
       - store_artifacts:
           path: ~/repo/dist
