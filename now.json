@@ -1,2 +1,10 @@
-{}
+{
+  "version": 2,
+  "builds": [
+    { "src": "addons/*.js", "use": "@now/node" },
+    { "src": "modules/*.js", "use": "@now/node" },
+    { "src": "index.js", "use": "@now/node" },
+    { "src": "config.json", "use": "@now/static" }
+  ]
+}
 

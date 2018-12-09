@@ -1,6 +1,4 @@
 {
-  "token": "",
-  "owner": "",
   "modules": [{
     "name": "hello"
   }]
