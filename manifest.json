@@ -1,0 +1,34 @@
+{
+  "name": "tachyon",
+  "version": 1,
+  "protocol": 1,
+  "log": "debug",
+  "components": [
+    {
+      "name": "interpret",
+      "version": 1,
+      "load": true,
+      "designation": "interpreter"
+    },
+    {
+      "name": "load",
+      "version": 1,
+      "load": true,
+      "designation": "loader"
+    },
+    {
+      "name": "log",
+      "version": 1,
+      "load": true,
+      "designation": "logger"
+    }
+  ],
+  "modules": [
+    {
+      "name": "hello",
+      "version": 1,
+      "load": true,
+      "type": "action"
+    }
+  ]
+}
