@@ -39,6 +39,6 @@ jobs:
       # run tests!
       - run: npm test
       # code coverage!
-      - run: npx istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
+      - run: npx nyc --reporter=lcov --reporter=text-lcov npm test
       - run: npx codecov
       
