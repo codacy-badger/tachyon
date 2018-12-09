@@ -19,7 +19,7 @@ This method is slightly more involved, but allows you to edit modules.json and a
 1. Clone this repository: `git clone https://github.com/initializesahib/tachyon`  
 2. Install Node.js and NPM.  
 3. Download dependencies: `cd tachyon && npm install`  
-4. Run `TOKEN=[token] npm start_node` to start Tachyon.  
+4. Run `TOKEN=[token] npm start` to start Tachyon.  
 #### Method 3: Serverless Deployment using Now
 This method allows the bot to be run serverlessly using Now. You have to make changes to addons and modules before deploying.  
 1. Clone the repository: `git clone https://github.com/initializahib/tachyon`
@@ -28,4 +28,4 @@ This method allows the bot to be run serverlessly using Now. You have to make ch
 4. Install Now: `npm install -g now` (might require sudo)
 5. Run `now login` to log into your Now account.
 6. Run `now` to deploy your changes. It should give you a url.
-7. Visit `[now url]?token=[token]` in your browser / with CURL to start Tachyon.
+7. Visit `[now url]/now.js?token=[token]` in your browser / with CURL to start Tachyon.
