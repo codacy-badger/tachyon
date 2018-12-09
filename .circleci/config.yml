@@ -34,14 +34,21 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       
+      - run:
+          name: Download Code Climate binary
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
       # lint code!
       - run: npx eslint addons modules index.js test.js  
       # run tests!
       - run: npm test
       # code coverage!
+      - run: ./cc-test-reporter before-build
       - run: npx nyc --reporter=lcov --reporter=text-lcov npm test
       - run: npx codecov
- 
+      - run: ./cc-test-reporter after-build --coverage-input-type lcov --exit-code $?
+      
       # build and artifact
       - run: npm run-script build
 
