@@ -8,6 +8,7 @@
 **Dependencies**: [![Dependencies](https://david-dm.org/initializesahib/tachyon.svg)](https://david-dm.org/initializesahib/tachyon)  
 **devDependencies**: [![Developer Dependencies](https://david-dm.org/initializesahib/tachyon/dev-status.svg)](https://david-dm.org/initializesahib/tachyon?type=dev)  
 **Documentation**: [![Inch CI](https://inch-ci.org/github/initializesahib/tachyon.svg?branch=master)](https://inch-ci.org/github/initializesahib/tachyon)  
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/uses-badges.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/powered-by-electricity.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/gluten-free.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/makes-people-smile.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/powered-by-water.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/powered-by-oxygen.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/uses-git.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)](https://forthebadge.com)
 ### How to Use
 #### Method 1: Using Bundles
 This method is the simplest, but does not allow adding or removing modules, or changing what modules are loaded.
@@ -20,12 +21,3 @@ This method is slightly more involved, but allows you to edit modules.json and a
 2. Install Node.js and NPM.  
 3. Download dependencies: `cd tachyon && npm install`  
 4. Run `TOKEN=[token] npm start` to start Tachyon.  
-#### Method 3: Serverless Deployment using Now
-This method allows the bot to be run serverlessly using Now. You have to make changes to addons and modules before deploying.  
-1. Clone the repository: `git clone https://github.com/initializahib/tachyon`
-2. Install Node.js and NPM.
-3. Download dependencies: `cd tachyon && npm install`  
-4. Install Now: `npm install -g now` (might require sudo)
-5. Run `now login` to log into your Now account.
-6. Run `now` to deploy your changes. It should give you a url.
-7. Visit `[now url]/now.js?token=[token]` in your browser / with CURL to start Tachyon.
